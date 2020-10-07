@@ -26,6 +26,7 @@ export const featuresReducer = (state = initialState, action) => {
     case ADD_NEW_FEATURES:
       return {
         ...state,
+        additionalPrice: state.additionalPrice + action.newFeaturesPrice,
         car: {
           ...state.car,
           features: [
@@ -37,6 +38,8 @@ export const featuresReducer = (state = initialState, action) => {
             },
           ],
         },
+        // ...state,
+        // addtionalPrice: state.additionalPrice + action.newFeaturesPrice,
       };
 
     case DELETE_NEW_FEATURES:
