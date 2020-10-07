@@ -38,18 +38,18 @@ export const featuresReducer = (state = initialState, action) => {
             },
           ],
         },
-        // ...state,
-        // addtionalPrice: state.additionalPrice + action.newFeaturesPrice,
       };
 
     case DELETE_NEW_FEATURES:
+      console.log("actionpayload", action.newFeaturesPrice);
       return {
         ...state,
+        additionalPrice: state.additionalPrice - action.newFeaturesPrice,
         car: {
           ...state.car,
-          features: [
-            state.car.features.filter((item) => item.id !== action.payload),
-          ],
+          features: state.car.features.filter(
+            (item) => item.id !== action.payload
+          ),
         },
       };
 
@@ -57,3 +57,8 @@ export const featuresReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+//This code might work to remove the additional features from UI options so you can only add this feature once
+// additionalFeatures: state.additionalFeatures.filter(
+//   (item) => item.id !== action.payload.id
+// ),
