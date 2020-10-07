@@ -7,14 +7,25 @@ export const addNewFeatures = (
   newFeaturesPrice
 ) => {
   console.log(
-    "action feature id/name is invoked",
+    "action feature id/name/price is invoked",
     newFeaturesId,
-    newFeaturesName
+    newFeaturesName,
+    newFeaturesPrice
   );
+  //returns action object
   return {
     type: ADD_NEW_FEATURES,
     payload: newFeaturesId,
     newFeaturesName,
     newFeaturesPrice,
+  };
+};
+
+export const DELETE_NEW_FEATURES = "DELETE_NEW_FEATURES";
+
+export const deleteNewFeatures = (newFeaturesId) => {
+  return {
+    type: DELETE_NEW_FEATURES,
+    payload: newFeaturesId,
   };
 };
