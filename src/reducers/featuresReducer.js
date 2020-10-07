@@ -25,7 +25,14 @@ export const featuresReducer = (state = initialState, action) => {
         ...state,
         car: {
           ...state.car,
-          features: [...state.car.features, action.payload],
+          features: [
+            ...state.car.features,
+            {
+              id: action.payload,
+              name: action.newFeaturesName,
+              price: action.newFeaturesPrice,
+            },
+          ],
         },
       };
     default:
