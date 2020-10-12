@@ -21,6 +21,7 @@ export const addNewFeatures = (
   };
 };
 
+
 export const DELETE_NEW_FEATURES = "DELETE_NEW_FEATURES";
 
 export const deleteNewFeatures = (
